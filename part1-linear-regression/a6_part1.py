@@ -8,7 +8,7 @@ x = data["Age"].values
 y = data["Blood Pressure"].values
 
 # Use reshape to turn the x values into 2D arrays:
-x = x.reshape(-1,1)
+# x = x.reshape(-1,1)
 
 # Create the model
 
@@ -22,3 +22,16 @@ x = x.reshape(-1,1)
 # Print out the prediction
 
 # Create the model in matplotlib and include the line of best fit
+
+# sets the size of the graph
+plt.figure(figsize=(6,5))
+
+# creates a scatter plot and labels the axes
+plt.scatter(x,y)
+plt.xlabel("Age")
+plt.ylabel("Blood Pressure")
+plt.title("Blood Pressure vs Age")
+
+
+# show the plot
+plt.show()

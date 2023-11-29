@@ -7,9 +7,11 @@ from sklearn.linear_model import LinearRegression
 data = pd.read_csv("part1-linear-regression/chirping_data.csv")
 x = data["Temp"].values
 y = data["Chirps"].values
+print(x)
 
 # use reshape to turn the x values into a 2D array
 x = x.reshape(-1, 1)
+print(x)
 
 # create the model
 model = LinearRegression().fit(x, y)
