@@ -15,6 +15,13 @@ y = data["Temp"].values
 
 # separates the data into training and testing sets
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = .2)
+print(f"x {x}")
+print(f"y {y}")
+print(f"xtrain {xtrain}")
+print(f"xtest {xtest}")
+print(f"ytrain {ytrain}")
+print(f"ytest {ytest}")
+
 
 # reshape the xtrain data into a 2D array
 xtrain = xtrain.reshape(-1, 1)
@@ -42,7 +49,7 @@ xtest = xtest.reshape(-1,1)
 predict = model.predict(xtest)
 # round the value in the np array to 2 decimal places
 predict = np.around(predict, 2)
-
+print(predict)
 # compare the actual and predicted values
 print("\nTesting Linear Model with Testing Data:")
 for index in range(len(xtest)):

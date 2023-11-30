@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 **********CREATE THE MODEL**********
 '''
 
-data = pd.read_csv("data.csv")
+data = pd.read_csv("part2-training-testing-data/blood_pressure_data.csv")
 x = data["Age"].values
 y = data["Blood Pressure"].values
 
