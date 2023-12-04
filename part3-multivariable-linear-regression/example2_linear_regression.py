@@ -18,7 +18,7 @@ y = data["Fawn"].values
 # separates the data into training and testing sets
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = .2)
 
-# # reshape the xtrain data into a 2D array
+# # reshape the xtrain data into a 2D array - Not need b/c already 2D array
 # xtrain = xtrain.reshape(-1, 1)
 
 # create the linear regression model using the training data
@@ -47,7 +47,8 @@ print(predict)
 # compare the actual and predicted values
 print("\nTesting Multivariable Model with Testing Data:")
 for index in range(len(xtest)):
-    actual = ytest[index] # gets the actual y value from the ytest dataset
+    actual = round(ytest[index], 2) # gets the actual y value from the ytest dataset
     predicted_y = predict[index] # gets the predicted y value from the predict variable
     x_coord = xtest[index] # gets the x value from the xtest dataset
+    x_coord = np.around(x_coord, 2)
     print(f"Adult Population: {x_coord[0]} Annual Percipitation: {x_coord[1]} Winter Severity: {x_coord[2]} Actual: {actual} Predicted: {predicted_y}")

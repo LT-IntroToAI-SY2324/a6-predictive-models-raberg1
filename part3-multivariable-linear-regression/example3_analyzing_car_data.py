@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 data = pd.read_csv("part3-multivariable-linear-regression/car_data.csv")
-x_1 = data["miles"]
+x_1 = data["miles(000)"]
 x_2 = data["age"]
 y = data["Price"]
 
