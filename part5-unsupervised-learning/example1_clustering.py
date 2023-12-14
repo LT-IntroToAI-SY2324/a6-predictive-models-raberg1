@@ -9,7 +9,7 @@ data = data[["eruptions", "waiting"]]
 
 #standardizes the data
 x_std = StandardScaler().fit_transform(data)
-
+# print(x_std)
 #sets the value of k and creates kmeans model
 k = 2
 km = KMeans(n_clusters=k).fit(x_std)
@@ -26,6 +26,7 @@ plt.figure(figsize=(5,4))
 #plots the data points for each cluster
 for i in range(k):
     cluster = x_std[labels == i]
+    print(cluster)
     plt.scatter(cluster[:,0], cluster[:,1])
 
 #plots the centriods

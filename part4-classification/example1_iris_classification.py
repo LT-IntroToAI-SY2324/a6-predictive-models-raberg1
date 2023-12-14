@@ -22,7 +22,7 @@ x = scaler.transform(x)
 x_train, x_test, y_train, y_test = train_test_split(x, y)
 
 #Creates the logisitic regression model
-model = linear_model.LogisticRegression().fit(x_train, y_train)
+model =  linear_model.LogisticRegression().fit(x_train, y_train)
 
 #Prints the accuracy and predictions of the model
 print("Accuracy:", model.score(x_test, y_test))
@@ -32,7 +32,9 @@ print("")
 print(y_test)
 for index in range(len(x_test)):
     x = x_test[index]
+    print(x)
     x = x.reshape(-1, 4)
+    print(x)
     y_pred = int(model.predict(x))
 
     if y_pred == 0:
@@ -51,3 +53,8 @@ for index in range(len(x_test)):
         actual = "Iris-versicolor"
     print("Predicted Species: " + y_pred + " Actual Species: " + actual)
     print("")
+
+my_flower = [[7, 3, 5, 2]]
+my_flower_scaled = scaler.transform(my_flower)
+my_prediction = model.predict(my_flower_scaled)
+print(my_prediction)
